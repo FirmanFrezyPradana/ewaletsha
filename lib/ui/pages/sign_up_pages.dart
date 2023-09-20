@@ -3,8 +3,8 @@ import 'package:ewaletproject/ui/widgets/buttons.dart';
 import 'package:ewaletproject/ui/widgets/forms.dart';
 import 'package:flutter/material.dart';
 
-class SignInPage extends StatelessWidget {
-  const SignInPage({super.key});
+class SignUpPage extends StatelessWidget {
+  const SignUpPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +27,7 @@ class SignInPage extends StatelessWidget {
                     image: AssetImage('assets/img_logo_light.png'))),
           ),
           Text(
-            'Sign In\nGrow Your Finance',
+            'Join Us to Unlock\nYour Growth',
             style: blackTextStyle.copyWith(
               fontSize: 20,
               fontWeight: semiBold,
@@ -47,6 +47,13 @@ class SignInPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const CostomFormField(
+                  title: 'Fullname',
+                ),
+                const SizedBox(
+                  height: 16,
+                ),
+                //password note
+                const CostomFormField(
                   title: 'Email Address',
                 ),
                 const SizedBox(
@@ -57,16 +64,7 @@ class SignInPage extends StatelessWidget {
                   title: 'Password',
                   obscureText: true,
                 ),
-                const SizedBox(
-                  height: 8,
-                ),
-                Align(
-                  alignment: Alignment.centerRight,
-                  child: Text(
-                    'Forget Password?',
-                    style: blueTextStyle,
-                  ),
-                ),
+
                 const SizedBox(
                   height: 30,
                 ),
@@ -74,18 +72,20 @@ class SignInPage extends StatelessWidget {
                   children: [
                     //cara singkat
                     CostomFiledButton(
-                      title: 'Sign In',
-                      onPressed: () {},
+                      title: 'Continue',
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/sign-up-set-profile');
+                      },
                     ),
                     const SizedBox(
-                      height: 50,
+                      height: 30,
                     ),
                     CostomTextButton(
-                      title: 'Create New Account',
+                      title: 'Sign in',
                       onPressed: () {
-                        Navigator.pushNamed(context, '/sign-up');
+                        Navigator.pushNamed(context, '/sign-in');
                       },
-                    )
+                    ),
                   ],
                 ),
               ],

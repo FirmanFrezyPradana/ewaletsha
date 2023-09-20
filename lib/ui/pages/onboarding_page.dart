@@ -17,7 +17,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
   List<String> titles = [
     'Grow Your\nFinance Today',
     'Build From\nZero to Freedom',
-    'Strart together'
+    'Start together'
   ];
   List<String> subTitle = [
     'Our System is helping you to\nachieve a better goal',
@@ -97,27 +97,19 @@ class _OnboardingPageState extends State<OnboardingPage> {
                       ? Column(
                           children: [
                             CostomFiledButton(
-                                title: 'Get Started', onPressed: () {}),
+                                title: 'Get Started',
+                                onPressed: () {
+                                  Navigator.pushNamedAndRemoveUntil(
+                                      context, '/sign-up', (route) => false);
+                                }),
                             const SizedBox(
                               height: 20,
                             ),
-                            SizedBox(
-                              width: double.infinity,
-                              height: 24,
-                              child: TextButton(
-                                onPressed: () {
-                                  Navigator.pushNamed(context, '/sign-in');
-                                },
-                                style: TextButton.styleFrom(
-                                  padding: EdgeInsets.zero,
-                                ),
-                                child: Text(
-                                  'Sign In',
-                                  style: greyTextStyle.copyWith(
-                                    fontSize: 16,
-                                  ),
-                                ),
-                              ),
+                            CostomTextButton(
+                              title: 'Sign in',
+                              onPressed: () {
+                                Navigator.pushNamed(context, '/sign-in');
+                              },
                             ),
                           ],
                         )
@@ -170,28 +162,6 @@ class _OnboardingPageState extends State<OnboardingPage> {
                                 carouselController.nextPage();
                               },
                             ),
-                            // SizedBox(
-                            //   width: 150,
-                            //   height: 50,
-                            //   child: TextButton(
-                            //     onPressed: () {
-                            //       carouselController.nextPage();
-                            //     },
-                            //     style: TextButton.styleFrom(
-                            //       backgroundColor: purpleColor,
-                            //       shape: RoundedRectangleBorder(
-                            //         borderRadius: BorderRadius.circular(56),
-                            //       ),
-                            //     ),
-                            //     child: Text(
-                            //       'continue',
-                            //       style: whiteTextStyle.copyWith(
-                            //         fontSize: 16,
-                            //         fontWeight: semiBold,
-                            //       ),
-                            //     ),
-                            //   ),
-                            // ),
                           ],
                         )
                 ],
